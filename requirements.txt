@@ -1,0 +1,8 @@
+six
+boto
+boto3
+datetime
+flask
+mlocs
+pyyaml
+uwsgi

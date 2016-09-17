@@ -1,0 +1,4 @@
+aws:
+  BUCKET : '<bucker name>'
+  AWS_ACCESS_KEY_ID : '<ACCESS_KEY_ID here>'
+  AWS_SECRET_ACCESS_KEY : '<ACCESS_SECRET_KEY here>'
