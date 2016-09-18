@@ -91,3 +91,16 @@ Response:
 
 Error: *500*
 
+### GET /status?taskID=<taskID>
+
+```
+
+Response:
+```
+{
+  status: [completed|running|cancelled]
+}
+```
+
+Error: *500*
+

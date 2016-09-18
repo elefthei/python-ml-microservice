@@ -97,4 +97,28 @@ def output_handle():
 
     return jsonify({'output': result}), 200
 
+# Handle a new /status request
+@app.route('/status', methods=['GET'])
+def task_query():
+    taskIDString = request.args.get('taskID')
+    taskID = -1
+    try:
+        taskID = int(taskIDString)
+    except ValueError:
+        abort(500, "/status invalid taskID")
+
+    try:
+        future = task_tracker.lookup_future(taskID)
+        try:
+	    # Wait 0s, this maybe needs adjusting
+            result = future.result(0)
+            return jsonify({'status': 'completed', 'result': str(result)}), 200
+        except futures.TimeoutError:
+            return jsonify({'status': 'running'}), 200
+        except futures.CancelledError:
+            return jsonify({'status': 'cancelled'}), 200
+        except Exception as ex:
+            return jsonify({'status': 'failed', 'exception': str(ex)}), 200
+    except:
+        abort(500, "/status unknown taskID")
 
