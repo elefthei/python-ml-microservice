@@ -1,7 +1,7 @@
 ML Microservice in Python
 ---------------------------
 
-Simple uWSGI with Flask web server implementing our Machine Learning REST API.
+Simple uWSGI with Flask web server implementing a Machine Learning REST API.
 
 ## Introduction
 
