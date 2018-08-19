@@ -43,7 +43,7 @@ Body:
 Example:
 ```
 {
-  files: [ 32AD86AB68CB4368830506D352772A12/bluetooth/490569736771195.csv ]
+  files: [ USERS/data/1234.csv ]
 }
 ```
 
